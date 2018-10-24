@@ -59,4 +59,25 @@ jQuery(function($){
 	if ($('div.dlc').length && $('div.dlt').length) {
 		$('div.dlt').after($('div.dlc'));
 	}
+        
+    $('.head-menu-btn').after($('.search'));
+    $('.search:not(.search_publications)').append('<div class="search-toggle"><i class="material-icons">search</i></div>');
+    $(document).on('click', '.search-toggle', function () {
+        $('#search').fadeToggle();
+    });
+
+
+
+    $('.content_long').append($('.search_publications'));
+    $('.search_publications').wrapInner('<div class="articles_container"></div>');
+    $('.search.search_publications .publications_block').each(function (index, el) {
+        $(this).find('a').wrapInner('<div class="publications_block_t"></div>').prepend('<div class="publications_block_info"></div>');
+        var self = $(this),
+                url = window.location.protocol + '//' + window.location.hostname + $(this).find('a').attr('href');
+        $(this).find('.publications_block_info').load(url + ' .article_full_img', {}, function () {
+            if (!self.find('img').length)
+                self.addClass('no-image');
+        });
+    });
+
 });

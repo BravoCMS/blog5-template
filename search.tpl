@@ -7,7 +7,8 @@
     <{$module.name|htmlspecialchars}>
 <{/block}>
 <{block name="module"}>
-    <div class="search search_publications">
-    
+    <div class="main_container">
+        <div class="content content_long">
+        </div>
     </div>
 <{/block}>
