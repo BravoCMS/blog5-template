@@ -10,33 +10,22 @@
 <{/block}>
 
 <{block name="module"}>
-    <div class="row">
+    <div class="search search_publications">
         <{foreach $items as $item}>
-            <div class="col-lg-4">
-                <{if $item.cover}>
+            <div class="publications_block">
+                <div class="publications_block_title">
+                    <{if $item.cover}>
+                        <a href="<{$item.relative_url}>" title="<{$item.name|escape}>">
+                            <img src="<{$item.cover.photo_file_small}>" style="width: 100%;" />
+                        </a>
+                    <{/if}>
+                </div>
+
+                <div class="publications_block_desc">
                     <a href="<{$item.relative_url}>" title="<{$item.name|escape}>">
-                        <img src="<{$item.cover.photo_file_small}>" style="width: 100%;" />
+                        <{$item.short_name|htmlspecialchars}>
                     </a>
-                <{/if}>
-            </div>
-
-            <div class="col-lg-8">
-                <a href="<{$item.relative_url}>" title="<{$item.name|escape}>">
-                    <{$item.short_name|htmlspecialchars}>
-                </a>
-
-                <{if $item.type == 'catalog_article'}>
-                    <{basket_form article=$item return_url="#basket-modal"}>
-                    <button type="submit" class="btn btn-success">
-                        <{if $item.price.is_price}>
-                            Купить за
-                            <{$item.price.html}>
-                        <{else}>
-                            Купить
-                        <{/if}>
-                    </button>
-                    <{/basket_form}>
-                <{/if}>
+                </div>
             </div>
         <{foreachelse}>
             <div class="col-lg-12">
