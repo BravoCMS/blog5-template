@@ -59,6 +59,14 @@ jQuery(function($){
 	if ($('div.dlc').length && $('div.dlt').length) {
 		$('div.dlt').after($('div.dlc'));
 	}
+        
+    $('.head-menu-btn').after($('.search'));
+    $('.search:not(.search_publications)').append('<div class="search-toggle"><i class="material-icons">search</i></div>');
+    $(document).on('click', '.search-toggle', function () {
+        $('#search').fadeToggle();
+    });
+
+
 
     $('.content_long').append($('.search_publications'));
     $('.search_publications').wrapInner('<div class="articles_container"></div>');
