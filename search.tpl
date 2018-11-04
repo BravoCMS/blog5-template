@@ -10,7 +10,7 @@
 <{/block}>
 
 <{block name="module"}>
-<{$items|var_dump}>
+
     <div class="search search_publications">
         <div class="articles_container">
             <{foreach $items as $item}>
