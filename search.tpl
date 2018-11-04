@@ -10,31 +10,26 @@
 <{/block}>
 
 <{block name="module"}>
-
-    <div class="search search_publications">
-        <div class="articles_container">
-            <{foreach $items as $item}>
-                <div class="publications_block">
-                    <{if $item.cover}>
-                        <div class="publications_block_title">
-                            <a href="<{$item.relative_url}>" title="<{$item.name|escape}>">
-                                <img src="<{$item.cover.photo_file_small}>" />
-                            </a>
-                        </div>
-                    <{/if}>
-                </div>
-
-                <div class="publications_block_desc">
+    <div class="row">
+        <{foreach $items as $item}>
+            <div class="col-lg-4">
+                <{if $item.cover}>
                     <a href="<{$item.relative_url}>" title="<{$item.name|escape}>">
-                        <{$item.short_name|htmlspecialchars}>
+                        <img src="<{$item.cover.photo_file_small}>" style="width: 100%;" />
                     </a>
-                </div>
-            <{foreachelse}>
-                <div class="col-lg-12">
-                    Ничего не найдено
-                </div>
-            <{/foreach}>
-        </div>
+                <{/if}>
+            </div>
+
+            <div class="col-lg-8">
+                <a href="<{$item.relative_url}>" title="<{$item.name|escape}>">
+                    <{$item.short_name|htmlspecialchars}>
+                </a>
+            </div>
+        <{foreachelse}>
+            <div class="col-lg-12">
+                Ничего не найдено
+            </div>
+        <{/foreach}>
 
         <script>
             jQuery(function ($) {
