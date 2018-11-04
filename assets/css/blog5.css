@@ -516,7 +516,12 @@ body.open .header .bg-overlay {
     top: 40px;
     right: 40px;
 }
+.search .search-toggle {
+    display: flex;
+    align-items: center;
+}
 .search #search_form {
+    display: flex;
     width: 80%;
     margin: 150px auto 0;
     position: relative;
