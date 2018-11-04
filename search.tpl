@@ -10,6 +10,7 @@
 <{/block}>
 
 <{block name="module"}>
+<{$items|var_dump}>
     <div class="row">
         <{foreach $items as $item}>
             <div class="col-lg-4">
