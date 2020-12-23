@@ -808,6 +808,31 @@ ul.dlc {
 span.dlc {
     padding: 0 30px;
 }
+.pagination {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pagination li {
+    font-size: 17px;
+    font-weight: 700;
+    margin: 0 5px;
+}
+.pagination li a {
+    padding: 5px 11.501px;
+    border-radius: 100%;
+    border: 1px solid transparent;
+    transition: all .8s cubic-bezier(.43,.195,.02,1);
+}
+.pagination li a:hover {
+    border: 1px solid #6493C5;
+}
+.pagination li.active a {
+    color: #6493C5;
+    text-decoration: none;
+    border: 1px solid #6493C5;
+}
 
 
 
