@@ -566,11 +566,11 @@ table th[class*="col-"] {
 .appearing-with-a-delay-photo-in-gallery-1 .img-list-wrapper.img-gallery .img-list li.show-photo img {
   top: 0;
   opacity: 1;
-  -webkit-transition: all 1s ease-in-out;
-  -moz-transition: all 1s ease-in-out;
-  -ms-transition: all 1s ease-in-out;
-  -o-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out;
+  -webkit-transition: all 1.2s ease-in-out;
+  -moz-transition: all 1.2s ease-in-out;
+  -ms-transition: all 1.2s ease-in-out;
+  -o-transition: all 1.2s ease-in-out;
+  transition: all 1.2s ease-in-out;
 }
 .youtube-playlist {
   margin: 0 -15px;

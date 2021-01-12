@@ -1,5 +1,6 @@
-// JsAdminSV
+
 jQuery(function ($) {
+    console.log("TEST TEST")
     var winWidth = document.body.clientWidth,
         winHeight = document.body.clientHeight,
         scrollVal = $(window).scrollTop();
@@ -16,7 +17,7 @@ jQuery(function ($) {
         $(this).parent().wrap('<div class="lb-container' + ($(this).hasClass('la-section--fullWidth') ? ' la-container--fullWidth' : '') + '" />');
     });
 
-    $(document).ready(function () {
+    $(document).on('ready', function () {
         if ($('.header-between-of-horizontal-lines').length) {
             $('.header-between-of-horizontal-lines h1').each(function(index, el) {
                 $(this).wrapInner('<span class="h-text" />');
@@ -55,26 +56,26 @@ jQuery(function ($) {
         }
         
         // redactor preview
-        // if ($('.img-list-wrapper.img-preview').length) {
-        //  var src = '';
-        //  $('.img-list-wrapper.img-preview img').each(function () {
-        //      if ($(this).attr('src-original')) {
-        //          src = $(this).attr('src-original');
-        //      } else {
-        //          src = $(this).attr('src');
-        //      }
-        //      $(this).wrap('<a href="' + src + '"></a>');
-        //  });
-        //  $('.img-list-wrapper.img-preview').each(function() {
-        //      $(this).find('a').lightBox({fixedNavigation: true});
-        //  });
+         if ($('.img-list-wrapper.img-preview').length) {
+          var src = '';
+          $('.img-list-wrapper.img-preview img').each(function () {
+              if ($(this).attr('src-original')) {
+                  src = $(this).attr('src-original');
+              } else {
+                  src = $(this).attr('src');
+              }
+              $(this).wrap('<a href="' + src + '"></a>');
+          });
+          $('.img-list-wrapper.img-preview').each(function() {
+              $(this).find('a').lightBox({fixedNavigation: true});
+          });
 
-        //  if ($('.square-photos').length) {
-        //      $('.square-photos .img-list-wrapper.img-preview .img-list li a').each(function () {
-        //          $(this).css('background-image', 'url('+$(this).find('img').attr('src')+')');
-        //      });
-        //  }
-        // }
+          if ($('.square-photos').length) {
+              $('.square-photos .img-list-wrapper.img-preview .img-list li a').each(function () {
+                  $(this).css('background-image', 'url('+$(this).find('img').attr('src')+')');
+              });
+          }
+         }
         if ($('.img-list-wrapper.img-preview').length) {
             if(!$('.pswp').length) {
                 $('body').append(
@@ -964,16 +965,8 @@ jQuery(function ($) {
                 $.ajax({
                     url: dataLink,
                     success:function(data){
-                        var logo = data.match(/"profile_pic_url":"([^"]+)"/) ? 
-                        		   data.match(/"profile_pic_url":"([^"]+)"/)[1] ?
-                        		   data.match(/"profile_pic_url":"([^"]+)"/)[1] :
-                        		   '' :
-                        		   '',
-                            followers = data.match(/"edge_followed_by":{"count":([0-9]+)}/) ? 
-                            			data.match(/"edge_followed_by":{"count":([0-9]+)}/)[1] ?
-                            			data.match(/"edge_followed_by":{"count":([0-9]+)}/)[1] :
-                            			'' :
-                            			'';
+                        var logo = data.match(/"profile_pic_url":"([^"]+)"/)[1],
+                            followers = data.match(/"followed_by":{"count":([0-9]+)}/)[1];
 
                         if (followers.length > 3) {
                             followers = followers.split('');
@@ -1109,8 +1102,6 @@ jQuery(function ($) {
             initPhotoSwipeFromDOM('.photoswipe-slider');
         }
 
-
-
         if ($('.photos .photo').length) {
             if(!$('.pswp').length) {
                 $('body').append(
@@ -1201,22 +1192,6 @@ jQuery(function ($) {
         }
     });
 
-    $(window).on('scroll', function () {
-        var winWidth = document.body.clientWidth,
-            winHeight = document.body.clientHeight,
-            scrollVal = $(window).scrollTop();
-
-        // redactor gallery
-        if ($('.img-list-wrapper.img-gallery').length) {
-            if ($('.appearing-with-a-delay-photo-in-gallery-1').length) {
-                $('.appearing-with-a-delay-photo-in-gallery-1 .img-gallery li').each(function() {
-                    if ($(this).offset().top < scrollVal + winHeight -100) {
-                        $(this).addClass('show-photo');
-                    }
-                });
-            }
-        }
-    });
 
     $(window).on('resize', function () {
         var winWidth = document.body.clientWidth,
@@ -1233,7 +1208,6 @@ jQuery(function ($) {
                 });
             }
         }
-
         // redactor iframe
         if ($('.out-ext-info iframe').length) {
             $('.out-ext-info iframe').each(function () {
@@ -1252,8 +1226,6 @@ jQuery(function ($) {
             });
         }
     });
-
-
     window.vcParallaxSkroll = false;
     if ( 'function' !== typeof(window[ 'vc_rowBehaviour' ]) ) {
         window.vc_rowBehaviour = function () {
@@ -1300,6 +1272,7 @@ jQuery(function ($) {
 
 // redactor youtube
 jQuery(document).on('ready', function () {
+    console.log("READY")
     if (jQuery('.tag-youtube-block').length) {  
         var tag = document.createElement('script');
         tag.src = "https://www.youtube.com/iframe_api";
@@ -1310,6 +1283,7 @@ jQuery(document).on('ready', function () {
 
 function onYouTubeIframeAPIReady () {
     jQuery('.tag-youtube-block').each(function () {
+        console.log("has youtube");
         var tagBlock = jQuery(this),
             type = tagBlock.attr('data-type'),
             channelId = tagBlock.attr('data-channel-id'),
