@@ -5,8 +5,8 @@
         "processing": "max"
     },
     "thumbnail": {
-        "width": 730,
-        "height": 480,
+        "width": 2160,
+        "height": 2160,
         "processing": "max",
         "watermark": false
     },
