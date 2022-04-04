@@ -1055,7 +1055,7 @@ span.dlc {
 		padding-right: 20px;
 	}
 	.products_table {
-	    padding: 40px 20px;
+	    padding: 40px 0px;
 	}
 }
 @media only screen and (max-width: 480px) {
@@ -1081,4 +1081,12 @@ span.dlc {
 	    -ms-transform: translateX(-540%);
 	    transform: translateX(-540%);
 	}
+}
+
+@media (max-width: 768px) {
+    .la-block-content__editable--header,
+    .la-block-content__editable--text,
+    .la-block-content__editable--list {
+      padding: 0 !important;
+    }
 }
