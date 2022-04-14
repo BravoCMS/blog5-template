@@ -6,7 +6,7 @@ jQuery(function($){
 	$('.search').prepend('<a class="close-search" href="#"><span class="fa fa-2x fa-close"></span></a>');
 	$('.footer_container').prepend('<div class="backtop"><a class="backtop-link" href="#"><span class="fa fa-chevron-up"></span></a></div>');
 	$( "#speed" ).selectmenu({
-		width: 200,
+		width: 250,
 		change: function( event, ui ) {
 			console.log(event, ui);
 			window.open(ui.item.value, "_self");
