@@ -519,12 +519,15 @@ blockquote p:last-child {
     padding: 0;
     margin: 30px 0 0;
 }
+#speed-button {
+    margin-right: 0 !important;
+}
 .header .top_menu ul li a {
     padding: 8px 20px;
     display: block;
     line-height: 1;
     font-size: 16px;
-    text-transform: uppercase;
+    text-transform: none;
     color: #FAFBFF;
 }
 .header .top_menu ul li a:hover {

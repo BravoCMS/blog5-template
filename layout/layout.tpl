@@ -101,7 +101,16 @@
 
                         <div class="top_menu">
                             <{get_menu "top" "top_menu"}>
-
+                            <{if $site.languages|count > 1}>
+                                <select name="speed" id="speed">
+                                    <{foreach $site.languages as $language}>
+                                        <option <{if $language.language_id == $site.active_language.language_id}>selected="selected"<{/if}> value="<{$language.page_url}>">
+                                            <{$language.code|htmlspecialchars}>
+                                        </option>
+                                    <{/foreach}>
+                                </select>
+                            <{/if}>
+                            
                             <{if $top_menu.0|count}>
                                 <ul class="navbar-nav mr-auto">
                                     <{foreach $top_menu.0 as $page}>
@@ -114,35 +123,7 @@
                                 </ul>
                             <{/if}>
 
-                            <{if $site.languages|count > 1}>
-                                <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="languages-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <{$site.active_language.name|htmlspecialchars}>
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="languages-dropdown">
-                                        <{foreach $site.languages as $language}>
-                                            <a class="dropdown-item<{if $language.language_id == $site.active_language.language_id}> active<{/if}>" href="<{$language.page_url}>">
-                                                <{$language.name|htmlspecialchars}>
-                                            </a>
-                                        <{/foreach}>
-                                    </div>
-                                </div>
-                            <{/if}>
 
-                            <{if $site.currencies|count > 1}>
-                                <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="languages-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <{$site.active_currency.name|htmlspecialchars}>
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="languages-dropdown">
-                                        <{foreach $site.currencies as $currency}>
-                                            <a class="dropdown-item<{if $currency.currency_id == $site.active_currency.currency_id}> active<{/if}>" href="<{$site.url_part|escape}>ajax/select_currency/" data-method="POST" data-post="currency_id=<{$currency.currency_id}>" data-refresh="1">
-                                                <{$currency.name|htmlspecialchars}>
-                                            </a>
-                                        <{/foreach}>
-                                    </div>
-                                </div>
-                            <{/if}>
                         </div>
                     </div>
                 
