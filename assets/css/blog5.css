@@ -642,8 +642,12 @@ body.open .header .bg-overlay {
     right: 40px;
 }
 .search .search-toggle {
+    cursor: pointer;
+    outline: none;
     display: flex;
     align-items: center;
+    background: transparent;
+    border: none;
 }
 .search #search_form {
     display: flex;
