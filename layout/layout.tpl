@@ -227,14 +227,14 @@
                         </p>
                     </div>
                 </div>
-                <div class="who_make">
+                <!-- <div class="who_make">
                     <a class="nav-link" href="http://totalcan.com.ua/" title="Создание сайтов, разработка интернет магазинов, раскрутка сайтов">
                         Создание сайта
                     </a>
                     <a class="nav-link" href="http://bravosell.com/ru/" title="Сайт работает на CMS Bravosell">
                         CMS интернет магазина - bravosell
                     </a>
-                </div>
+                </div> -->
 
                 <{custom_code "counters"}>
             </div>
