@@ -121,7 +121,7 @@
 .la-block-content__editable--cite {
   font-family: Georgia;
   padding-top: 40px;
-  background: url(../images/quotes.png) top left no-repeat;
+  /* background: url(../images/quotes.png) top left no-repeat; */
 }
 /* .la-block-content__editable--cite:before {
   content: '"';
