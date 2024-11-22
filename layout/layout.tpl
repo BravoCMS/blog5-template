@@ -36,6 +36,11 @@
     <link href="<{file 'assets/plugins/fontAwesome/css/font-awesome.min.css'}>" rel="stylesheet" type="text/css" />
     <link href="<{file 'assets/node_modules/jquery-ui-dist/jquery-ui.min.css'}>" rel="stylesheet" type="text/css"/>
     <link href="<{file 'assets/node_modules/@bravocms/editor/css/custom-article.css'}>" rel="stylesheet" type="text/css" />
+    <style>
+        .la-block-content__editable--cite {
+            background: none !important;
+        }
+    </style>
     <link href="<{file 'assets/node_modules/@bravocms/editor/css/grid.css'}>" rel="stylesheet" type="text/css" />
     <{if $template.scheme == 'orange'}>
         <link href="<{file 'assets/css/scheme/orange.css'}>" rel="stylesheet" type="text/css" />
