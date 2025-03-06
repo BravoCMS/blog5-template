@@ -718,7 +718,8 @@ body.open .header .bg-overlay {
 .footer .copyright p {
 	display: inline-block;
 	vertical-align: top;
-	color: #FAFBFF;
+	/* color: #FAFBFF; */
+    color: #C6C6C6;
     font-weight: 700;
 }
 .products_table {
