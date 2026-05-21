@@ -11,7 +11,7 @@
         "jquery": "^3.4.1",
         "jquery-colpick": "^3.1.0",
         "jquery-ui-dist": "^1.12",
-        "js-cookie": "^2.2.1",
+        "js-cookie": "^3.0.7",
         "popper.js": "^1.16.1",
         "requirejs": "^2.3"
     }
